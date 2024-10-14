@@ -70,7 +70,7 @@ export class Components extends Construct {
         },
       },
     });
-    alarmComponent.addDependsOn(timestreamComponent);
+    alarmComponent.addDependency(timestreamComponent);
 
     const spaceComponent = new twinmaker.CfnComponentType(this, 'SpaceComponent', {
       workspaceId: workspace.workspaceId,
@@ -138,6 +138,6 @@ export class Components extends Construct {
         },
       },
     });
-    watertankComponent.addDependsOn(timestreamComponent);
+    watertankComponent.addDependency(timestreamComponent);
   }
 }

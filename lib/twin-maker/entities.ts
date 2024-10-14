@@ -27,7 +27,7 @@ export class Entities extends Construct {
       entityId: 'lux-22',
       entityName: 'LUX-22',
     });
-    luxOffice.addDependsOn(emeaEntity);
+    luxOffice.addDependency(emeaEntity);
 
     const protoLabs = new twinmaker.CfnEntity(this, 'ProtoLabsEntity', {
       workspaceId: workspace.workspaceId,
@@ -61,7 +61,7 @@ export class Entities extends Construct {
         },
       },
     });
-    protoLabs.addDependsOn(luxOffice);
+    protoLabs.addDependency(luxOffice);
 
     const waterTank = new twinmaker.CfnEntity(this, 'WaterTankEntity', {
       workspaceId: workspace.workspaceId,
@@ -116,6 +116,6 @@ export class Entities extends Construct {
         },
       },
     });
-    waterTank.addDependsOn(protoLabs);
+    waterTank.addDependency(protoLabs);
   }
 }

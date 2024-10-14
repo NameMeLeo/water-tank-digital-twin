@@ -204,7 +204,7 @@ export class IotCore extends Construct {
     ];
     if (!virtual) components.push(this.createKvsComponent('kvs'));
 
-    for (let i = 1; i < components.length; i++) components[i].component.addDependsOn(components[i - 1].component);
+    for (let i = 1; i < components.length; i++) components[i].component.addDependency(components[i - 1].component);
     for (let i = 1; i < components.length; i++) components[i].versionCr.node.addDependency(components[i - 1].versionCr);
 
     const customComponents = components.reduce(
